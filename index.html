@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filmy warte obejrzenia</title>
   <meta name="description" content="Lista filmów i seriali, które warto obejrzeć.">
 
@@ -11,43 +12,55 @@
       background-color: #292727;
       color: #bebebe;
       padding: 20px;
+      margin: 0;
     }
 
     h1 {
       text-align: center;
       color: #d6d1d1;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
     }
 
     .film {
       background-color: #746f6f;
-      border: 1px solid #ccc;
+      border-radius: 10px;
+      border: 1px solid #444;
       margin: 20px auto;
       padding: 15px;
       max-width: 600px;
       display: flex;
       align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .film:hover {
+      transform: scale(1.02);
     }
 
     .film img {
       width: 120px;
       height: auto;
+      border-radius: 8px;
       margin-right: 15px;
+      flex-shrink: 0;
     }
 
     .film a {
-      font-size: 18px;
-      color: #007acc;
+      font-size: 1.1rem;
+      color: #00aaff;
       text-decoration: none;
       font-weight: bold;
     }
 
     .film a:hover {
-      color: #cacaca;
+      color: #d9d9d9;
     }
 
     .film p {
-      margin-top: 10px;
-      font-size: 20px;
+      margin-top: 8px;
+      font-size: 1rem;
       color: #0c0c0c;
     }
 
@@ -57,13 +70,48 @@
       text-align: center;
       padding: 15px;
       color: #070707;
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    /* 🔹 Responsywność dla urządzeń mobilnych */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .film {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+
+      .film img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 10px auto;
+        display: block;
+      }
+
+      .film a {
+        font-size: 1.2rem;
+      }
+
+      .film p {
+        font-size: 1rem;
+        color: #111;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1> Filmy warte obejrzenia</h1>
+  <h1>Filmy warte obejrzenia</h1>
 
   <div class="film">
     <img src="img/hq720.jpg" alt="Interstellar">
@@ -82,7 +130,7 @@
   </div>
 
   <footer>
-   Krzysztof Michałowski 
+    Krzysztof Michałowski
   </footer>
 
 </body>
